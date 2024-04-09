@@ -1,0 +1,174 @@
+# SPDX-FileCopyrightText: 2024, Yaskawa America, Inc.
+# SPDX-FileCopyrightText: 2024, Delft University of Technology
+#
+# SPDX-License-Identifier: CC0-1.0
+
+# Revisions checked out mostly target ROS 2 Galactic (or the micro-ROS equivalents).
+#
+# NOTE: this list has not been pruned. It's possible some of these repositories
+# are not actually needed for the MotoPlus platform.
+#
+# NOTE2: where possible, these entries point to specific commits or tags.
+# Other commits or tags have not been tested, and may result in either build
+# failures or non-functioning binaries.
+repositories:
+  eProsima/Micro-CDR:
+    type: git
+    url: https://github.com/eProsima/Micro-CDR.git
+    version: 2510ae2575ea4ef9682047b14ce515af4cd7b9f1
+  eProsima/Micro-XRCE-DDS-Client:
+    type: git
+    url: https://github.com/yaskawa-global/microxrcedds_client_motoplus.git
+    # this is 'v2.2.1' from upstream, but with our own patches
+    # branch name: motoplus_dev/upstream/v2.2.1_with_patches_galactic
+    version: 4876ecca89e2bc934fee66b814587d2fc06f8f33
+
+  ros2/libyaml_vendor:
+    type: git
+    url: https://github.com/ros2/libyaml_vendor.git
+    version: 1.2.2
+
+  ros2/rcl:
+    type: git
+    url: https://github.com/ros2/rcl.git
+    # this is galactic, one commit after 3.1.3
+    version: 47753122084d9762e570761af95c5e123ececf37
+  ros2/rcl_logging:
+    type: git
+    url: https://github.com/ros2/rcl_logging.git
+    # this is galactic, one commit after 2.1.4
+    version: deed0c949998e015459fe6f3de9c0d25c8b7d426
+  ros2/rclc:
+    type: git
+    url: https://github.com/ros2/rclc.git
+    # NOTE: this is on 'master', not 'galactic'
+    # (actions do not appear to be supported on galactic)
+    version: 243ee63ca369f0fb90397ba9ae0ca1283ab16ad3
+  ros2/rcpputils:
+    type: git
+    url: https://github.com/ros2/rcpputils.git
+    # one commit past 2.2.1
+    # NOTE: we don't actually use this package in MotoROS2
+    # TODO: check whether we can drop this completely
+    version: cc1148f8d161c9ea19cb10d37fa2a616e5ef2fe4
+
+  ros2/rmw:
+    type: git
+    url: https://github.com/yaskawa-global/rmw.git
+    # one patch on top of 3.3.1
+    # branch: 'galactic-wip '
+    version: c586d1ae5c254ca6bcac2e47d60fe03dc74b265c
+  ros2/rmw_implementation:
+    type: git
+    url: https://github.com/pyumr/rmw_implementation.git
+    # galactic, 2.4.1, without THREADS
+    version: e6d498e8d539dea7e788c3bd97864579b0fefd16
+  ros2/rosidl:
+    type: git
+    url: https://github.com/ros2/rosidl.git
+    # Basically 2.2.2, but with PRs 688 and 625
+    version: a0752a9e12937683cd2cb644737a30e402e09d2d
+  ros2/rosidl_dds:
+    type: git
+    url: https://github.com/ros2/rosidl_dds.git
+    version: 664a9daadce12d02d35091d1bfde7acabe829354
+  ros2/rosidl_defaults:
+    type: git
+    url: https://github.com/ros2/rosidl_defaults.git
+    version: 1.1.1
+
+  uros/rcl:
+    type: git
+    # this is a regular fork, but renamed due to potential clashes with ros2/rcl
+    url: https://github.com/yaskawa-global/micro_ros_rcl.git
+    # NOTE: the fork adds additional patches, on top of 'upstream/galactic'.
+    #       Branch name: 'galactic-wip-candidate-20221102'
+    version: 4d47ca41cb9ba54c7fb4115af51944af6b83b674
+  uros/rcutils:
+    type: git
+    url: https://github.com/yaskawa-global/rcutils.git
+    # Basically 'upstream/galactic', with 5 commits of our own
+    version: c413154042139915251fa04eebdb99649a9e6493
+  uros/micro_ros_utilities:
+    type: git
+    url: https://github.com/micro-ROS/micro_ros_utilities.git
+    # 'galactic', v2.0.0 release with "Handle sequence upper bounds" PR
+    version: d242d4f650969ffd36126a30927c0fbf29cc1aff
+  uros/rmw-microxrcedds:
+    type: git
+    url: https://github.com/micro-ROS/rmw-microxrcedds.git
+    # galactic, this is 2.0.0 with one additional commit
+    # ("Change context creation to besteffort with no timeout (#260)")
+    version: 895763c817c7c07ce0be08411924d7747c2acd2d
+  uros/rosidl_typesupport:
+    type: git
+    url: https://github.com/yaskawa-global/rosidl_typesupport.git
+    # 'upstream/galactic' with a single patch of our own
+    version: 0f9c20871301eee1db79b63ebdaefad22a96a6b4
+  uros/rosidl_typesupport_microxrcedds:
+    type: git
+    url: https://github.com/micro-ROS/rosidl_typesupport_microxrcedds.git
+    version: 2.0.0
+
+  uros/tracetools:
+    type: git
+    url: https://gitlab.com/micro-ROS/ros_tracing/ros2_tracing.git
+    version: 07ae5aa5c456f887f2aa82896e207a3209309a50
+
+  # messages/services/actions
+  ros2/common_interfaces:
+    type: git
+    url: https://github.com/ros2/common_interfaces.git
+    version: 2.2.4
+  ros2/example_interfaces:
+    type: git
+    url: https://github.com/ros2/example_interfaces.git
+    # one commit ahead of 0.9.2
+    version: ae3df08ac12cea293f53520c7c7dc67cb0cf5355
+  uros/micro_ros_msgs:
+    type: git
+    url: https://github.com/micro-ROS/micro_ros_msgs.git
+    version: 1.0.0
+  ros2/rcl_interfaces:
+    type: git
+    url: https://github.com/ros2/rcl_interfaces.git
+    version: 1.0.3
+  ros2/test_interface_files:
+    type: git
+    url: https://github.com/ros2/test_interface_files.git
+    version: 0.8.1
+  ros2/unique_identifier_msgs:
+    type: git
+    url: https://github.com/ros2/unique_identifier_msgs.git
+    version: 2.2.1
+
+  # only used to determine the ROS 2 codename during packaging
+  ros2/ros_environment:
+    type: git
+    url: https://github.com/ros/ros_environment.git
+    version: galactic
+
+  # extra dependencies needed for MotoROS2
+  extra/industrial_msgs:
+    type: git
+    url: https://github.com/ros-industrial/industrial_core.git
+    # branch: ros2_msgs_only
+    version: d547cdcfdaf3bc0d46325215b8219b0a190c8e6c
+  extra/ros-controls/control_msgs:
+    type: git
+    url: https://github.com/ros-controls/control_msgs.git
+    # three commits past 3.0.0 (upstream 'galactic'): "removes controller
+    # states for multi dof joints"
+    # NOTE: this is likely an ABI breaking change between galactic and humble
+    version: 1416954c31432c192ff95a06559847e87386cf60
+  extra/ros2/geometry2_tf2_msgs:
+    type: git
+    url: https://github.com/ros2/geometry2.git
+    # The commit specified here is 1 commit past '0.17.4' (the latest
+    # version released into ROS 2 Galactic).
+    version: 1186ee1e1be1dfe3691f31ba7f13662b1f1e1b91
+  extra/motoros2_interfaces:
+    type: git
+    url: https://github.com/yaskawa-global/motoros2_interfaces.git
+    # branch: main
+    version: 134e2b4110f21f5e72aadf9f5af30644a46573b0
