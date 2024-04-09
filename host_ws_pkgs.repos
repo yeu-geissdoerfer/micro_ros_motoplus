@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: CC0-1.0
 
-# Revisions checked out mostly target ROS 2 Galactic (or the micro-ROS equivalents).
+# Revisions checked out mostly target ROS 2 Humble (or the micro-ROS equivalents).
 #
 # NOTE: this list has not been pruned. It's possible some of these repositories
 # are not actually needed for the MotoPlus platform.
@@ -15,31 +15,32 @@ repositories:
   ros2/ament_cmake_ros:
     type: git
     url: https://github.com/ros2/ament_cmake_ros.git
-    version: 0.9.2
+    version: 0.10.0
   ament/ament_cmake:
     type: git
     # this is the only fork needed.
     # ament_cmake_core needs a single patch (for now),
     # otherwise this is vanilla upstream
     url: https://github.com/yaskawa-global/ament_cmake.git
-    version: 15920213bc69d0dab8ada31af2eec580bc02881f
+    # branch: 'humble-wip'
+    version: c31cecc540cd6e6f3bb4e437c77bdc928fe2dbc4
   ament/ament_index:
     type: git
     url: https://github.com/ament/ament_index.git
-    version: 1.2.0
+    version: 1.4.0
   ament/ament_lint:
     type: git
     url: https://github.com/ament/ament_lint.git
-    version: 0.10.6
+    version: 0.12.4
   ament/ament_package:
     type: git
     url: https://github.com/ament/ament_package.git
-    version: 0.13.1
+    version: 0.14.0
   ament/googletest:
     type: git
     url: https://github.com/ament/googletest.git
-    version: 79c4c9db1a7bc8bc5473a280499bf776173653d6
+    version: 1.10.9004
   ament/uncrustify_vendor:
     type: git
     url: https://github.com/ament/uncrustify_vendor.git
-    version: 1.5.3
+    version: 2.0.2
