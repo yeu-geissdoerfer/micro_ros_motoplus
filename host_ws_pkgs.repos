@@ -19,11 +19,11 @@ repositories:
   ament/ament_cmake:
     type: git
     # this is the only fork needed.
-    # ament_cmake_core needs a single patch (for now),
-    # otherwise this is vanilla upstream
+    # ament_cmake_core needs two patches (for now),
+    # otherwise this is vanilla upstream 1.3.5
     url: https://github.com/yaskawa-global/ament_cmake.git
-    # branch: 'humble-wip'
-    version: c31cecc540cd6e6f3bb4e437c77bdc928fe2dbc4
+    # branch: 'humble-motoplus1-candidate-20230624'
+    version: adb8bf83849c541a92ba7ea24d038757eafd2a47
   ament/ament_index:
     type: git
     url: https://github.com/ament/ament_index.git
@@ -31,7 +31,7 @@ repositories:
   ament/ament_lint:
     type: git
     url: https://github.com/ament/ament_lint.git
-    version: 0.12.4
+    version: 0.12.6
   ament/ament_package:
     type: git
     url: https://github.com/ament/ament_package.git

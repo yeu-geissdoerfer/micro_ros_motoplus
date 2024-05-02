@@ -15,13 +15,15 @@ repositories:
   eProsima/Micro-CDR:
     type: git
     url: https://github.com/eProsima/Micro-CDR.git
-    version: 2510ae2575ea4ef9682047b14ce515af4cd7b9f1
+    version: v2.0.1
   eProsima/Micro-XRCE-DDS-Client:
     type: git
     url: https://github.com/yaskawa-global/microxrcedds_client_motoplus.git
-    # this is 'v2.2.1' from upstream, but with our own patches
-    # branch name: motoplus_dev/upstream/v2.2.1_with_patches_galactic
-    version: 4876ecca89e2bc934fee66b814587d2fc06f8f33
+    # this is 'develop' from upstream, but with our own patches
+    # branch name: 'motoplus_dev/upstream/develop_with_patches-iron_update'
+    # NOTE: name says 'iron', but the same versions appear to be used for all
+    # supported ROS 2 distributions
+    version: 2ae3b964aef3bf1609d39dad1e188dbcadfeeeab
 
   ros2/libyaml_vendor:
     type: git
@@ -31,22 +33,22 @@ repositories:
   ros2/rcl_logging:
     type: git
     url: https://github.com/ros2/rcl_logging.git
-    version: 764508af43391d4583bb1aa310e809409ab166d5
+    version: 2.3.1
   ros2/rclc:
     type: git
     url: https://github.com/ros2/rclc.git
-    version: 786d95e3f2b20c156c8a88e7ff4b693e41171125
+    version: 4.0.2
   ros2/rcpputils:
     # NOTE: we don't actually use this package in MotoROS2
     # TODO: check whether we can drop this completely
     type: git
     url: https://github.com/ros2/rcpputils.git
-    version: 2.4.0
+    version: 2.4.1
 
   ros2/rmw:
     type: git
     url: https://github.com/yaskawa-global/rmw.git
-    # branch: 'humble-wip'
+    # update. Branch: 'humble-motoplus1'
     version: c705eb5260c47163399ee60f50da5253b1af992b
   ros2/rmw_implementation:
     type: git
@@ -55,8 +57,7 @@ repositories:
   ros2/rosidl:
     type: git
     url: https://github.com/ros2/rosidl.git
-    # almost 2.2.1, but with PR#617
-    version: bdc43f017e537649ca4306a977e838d3f1d0e825
+    version: 3.1.5
   ros2/rosidl_dds:
     type: git
     url: https://github.com/ros2/rosidl_dds.git
@@ -71,21 +72,21 @@ repositories:
     # this is a regular fork, but renamed due to potential clashes with ros2/rcl
     url: https://github.com/yaskawa-global/micro_ros_rcl.git
     # NOTE: the fork adds additional patches, on top of 'upstream/humble'.
-    #       Branch name: 'humble-wip-candidate-20221102'
-    version: 9be1df062fd48f1e9eb92132383b4802bbc5ab6f
+    #       Branch name: 'humble-motoplus1-candidate-20230624'
+    version: 1423adabdf10cd3165244e77479763d44bf5945a
   uros/rcutils:
     type: git
     url: https://github.com/yaskawa-global/rcutils.git
-    # Basically 'upstream/humble', with 5 commits of our own
-    version: 19816524b34d0d4aadd04d42947bdf1848251ce8
+    # 'upstream/humble' (couple commits past 5.1.3), with 5 patches
+    version: c8ec6220ae77d3363de4c377485fd9c653be2936
   uros/micro_ros_utilities:
     type: git
     url: https://github.com/micro-ROS/micro_ros_utilities.git
-    version: 008b94ab857c72a4e79239cb1d5b80e80ed268bc
+    version: 3.0.1
   uros/rmw-microxrcedds:
     type: git
     url: https://github.com/micro-ROS/rmw-microxrcedds.git
-    version: a2a74846971697e4afc8a70b59c9a8352d74195b
+    version: 3.0.2
   uros/rosidl_typesupport:
     type: git
     url: https://github.com/yaskawa-global/rosidl_typesupport.git
@@ -94,22 +95,22 @@ repositories:
   uros/rosidl_typesupport_microxrcedds:
     type: git
     url: https://github.com/micro-ROS/rosidl_typesupport_microxrcedds.git
-    version: 3.0.0
+    version: 3.0.1
 
   uros/tracetools:
     type: git
-    url: https://gitlab.com/micro-ROS/ros_tracing/ros2_tracing.git
-    version: 638fa0ab095ae1e941b05187418f0089c431e8d9
+    url: https://github.com/ros2/ros2_tracing.git
+    version: 4.1.1
 
   # messages/services/actions
   ros2/common_interfaces:
     type: git
     url: https://github.com/ros2/common_interfaces.git
-    version: 4.2.2
+    version: 4.2.3
   ros2/rcl_interfaces:
     type: git
     url: https://github.com/ros2/rcl_interfaces.git
-    version: 1b2e75388ded2c224e662df60ca957c14e2a8852
+    version: 1.2.1
   ros2/unique_identifier_msgs:
     type: git
     url: https://github.com/ros2/unique_identifier_msgs.git
@@ -119,24 +120,23 @@ repositories:
   ros2/ros_environment:
     type: git
     url: https://github.com/ros/ros_environment.git
-    version: humble
+    version: 3.2.2
 
   # extra dependencies needed for MotoROS2
   extra/industrial_msgs:
     type: git
     url: https://github.com/ros-industrial/industrial_core.git
-    # branch: ros2_msgs_only
+    # branch: 'ros2_msgs_only'
     version: d547cdcfdaf3bc0d46325215b8219b0a190c8e6c
   extra/ros-controls/control_msgs:
     type: git
     url: https://github.com/ros-controls/control_msgs.git
-    version: 4.1.0
+    version: 4.4.0
   extra/ros2/geometry2_tf2_msgs:
     type: git
     url: https://github.com/ros2/geometry2.git
-    version: 0.25.1
+    version: 0.25.3
   extra/motoros2_interfaces:
     type: git
     url: https://github.com/yaskawa-global/motoros2_interfaces.git
-    # branch: main
-    version: 134e2b4110f21f5e72aadf9f5af30644a46573b0
+    version: 0.1.1
