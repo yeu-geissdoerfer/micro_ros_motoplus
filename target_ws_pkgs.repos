@@ -139,4 +139,4 @@ repositories:
   extra/motoros2_interfaces:
     type: git
     url: https://github.com/yeu-geissdoerfer/motoros2_interfaces.git
-    version: master
+    version: main
